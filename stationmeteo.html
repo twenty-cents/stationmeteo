@@ -7,44 +7,69 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Station Météo de la promo</title>
 
-    <link rel="stylesheet" href="styles/stationmeteo.css">  
+    <link rel="stylesheet" href="styles/stationmeteo.css">
 
     <!-- Intégration de Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
-    <!-- Google font Abel -->
+    <!-- Import Font Abel-->
     <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
+
+    <!-- ChartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.2/dist/Chart.min.js" type="text/javascript"></script>
+
 </head>
 
 <body>
-    <main role="main">
+    <main class="container" role="main">
         <section class="text-center">
             <div class="container">
                 <h1 class="jumbotron-heading">Bienvenue dans la station météo de la promo</h1>
                 <p>
-                    <a href="#" class="btn btn-primary my-2">Dernière mesure</a>
-                    <a href="#" class="btn btn-secondary my-2">Top mesures</a>
-                    <a href="#" class="btn btn-secondary my-2">Tableaux des mesures</a>
-                    <a href="#" class="btn btn-secondary my-2">Graphiques des mesures</a>
+                    <a id="id-last-mesure" href="#" class="btn btn-primary my-2">Dernière mesure</a>
+                    <a id="id-top-mesures" href="#" class="btn btn-primary my-2">Top mesures</a>
+                    <a id="id-table-mesures" href="#" class="btn btn-primary my-2">Tableaux des mesures</a>
+                    <a id="id-graph-mesures" href="#" class="btn btn-primary my-2">Graphiques des mesures</a>
                 </p>
             </div>
         </section>
+
+        <section class="tops" id="id-section-details">
+
+        </section>
+
     </main>
 
-    <div class="container">
-        <!-- Content here -->
+    <!-- Formulaire de saisie d'une plage de date (caché) -->
+    <div id="graphDatePickerModel" class="graph hide">
+        <div class="top">
+            <form class="tops">
+                <div class="container form-group">
+                    <label for="startDate">Date de début</label>
+                    <input type="text" class="form-control" id="startDateModel" placeholder="yyyy-mm-jj">
+                </div>
+                <div class="container form-group">
+                    <label for="endDate">Date de fin</label>
+                    <input type="text" class="form-control" id="endDateModel" placeholder="yyyy-mm-jj">
+                </div>
+                <!-- Submit button -->
+                <button type="submit" id="id-form-datepicker-submit-Model">Soumettre</button>
+            </form>
+        </div>
+        <div id="graphCanvasModel" class="tops"></div>
     </div>
 
 </body>
+<script src="scripts/stationmeteo.js" type="text/javascript"></script>
 
 </html>

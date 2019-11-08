@@ -1,3 +1,56 @@
+/* police Roboto
+   couleur silver blue
+*/
+h5 {
+    font-weight: bold !important;
+}
 * {
     font-family: 'Abel', sans-serif;
 }
+
+.tops {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.measure {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.graph {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+/* Medium devices (tablets, 768px and up) */
+/* @media (min-width: 768px) { */
+@media media and (max-width: 1024px) {
+    .tops {
+        flex-direction: column;
+    }
+}
+
+/*
+.chart {
+    width: 400px;
+    height: 500px;
+}
+*/
